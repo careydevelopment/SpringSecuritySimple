@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Simple Spring Security | Carey Development Demos</title>
+        <object th:include="fragments/head :: head" th:remove="tag"></object>
+    </head>
+    <body class="page-container-bg-solid">
+        <div th:include="fragments/topmenuheader :: header"></div>
+        <div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-head" style="background-color:#eff3f8;padding-top:40px">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 ">
+                                <div class="portlet-body form">
+                                    <form th:action="@{/logout}" method="post">
+                                        <div class="form-body">
+                                            <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+                                            <input type="submit" class="btn blue" value="Sign Out"/>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:include="fragments/homefooter :: footer"></div>
+    </body>
+</html>

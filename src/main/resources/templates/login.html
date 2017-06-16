@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Spring Security Example </title>
+        <object th:include="fragments/head :: head" th:remove="tag"></object>
+    </head>
+    <body>
+        <div th:include="fragments/topmenuheader :: header"></div>
+        <div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-head" style="background-color:#eff3f8;padding-top:40px">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 ">
+                                <div class="portlet box blue ">
+                                    <div class="portlet-title">
+                                        <div class="caption">
+                                            <i class="icon-key"></i>
+                                            <span class="caption-subject" style="position:relative;top:2px">Enter Your Credentials</span>
+                                        </div>
+                                    </div>
+                                                     
+                                    <div class="portlet-body form">
+                                        <form id="loginForm" th:action="@{/login}" method="post">                                                            
+                                            <div class="form-body">
+                                                <div>
+                                                    <div class="mt-element-ribbon bg-grey-steel">
+                                                        <div class="ribbon ribbon-color-success uppercase">Login</div>
+                                                        <p class="ribbon-content">Please enter your name and password below to login.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="alert alert-danger" th:if="${param.error}">
+                                                    Invalid username or password.
+                                                </div>
+                                                <div class="alert alert-info" th:if="${param.logout}">
+                                                    You have been logged out.
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label>User Name</label>                                                                
+                                                    <div>
+                                                        <input type="text" name="username" class="form-control" maxlength="10"/>
+                                                    </div>
+                                                </div>                                                                                               
+                                                <div class="form-group">
+                                                    <label>Password</label>                                                                
+                                                    <div>
+                                                        <input type="password" name="password" class="form-control" maxlength="10"/>
+                                                    </div>
+                                                </div>                                                 
+                                            </div>
+                                            <div class="form-actions">
+                                                <button type="submit" class="btn blue">Login</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:include="fragments/homefooter :: footer"></div>       
+    </body>
+</html>

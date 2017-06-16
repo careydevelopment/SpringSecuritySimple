@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Spring Security Example</title>
+        <object th:include="fragments/head :: head" th:remove="tag"></object>
+    </head>
+    <body>
+        <div th:include="fragments/topmenuheader :: header"></div>
+        <div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-head" style="background-color:#eff3f8;padding-top:40px">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 ">
+                                <h1>Welcome!</h1>
+
+                                <p>Click <a th:href="@{/hello}">here</a> to login.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:include="fragments/homefooter :: footer"></div>
+    </body>
+</html>
