@@ -6,4 +6,6 @@ java -jar SpringSecuritySimple-1.0.jar
 
 Alternatively, you can run it within Eclipse by right-clicking on Application and selecting Run As... Java Application.
 
+The user name is "user" and the password is "password".
+
 Once the application is launched, you can access it at http://localhost:8090/
